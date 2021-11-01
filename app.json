@@ -1,18 +1,58 @@
 {
-  "pages":[
-    "pages/index/index",
-    "pages/trend/trend",
-    "pages/tongji/tongji",
-    "pages/fujin/fujin",
-    "pages/guide/guide",
-    "pages/details/details"
-  ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black"
-  },
-  "style": "v2",
-  "sitemapLocation": "sitemap.json"
+    "pages": [
+        "pages/index/index",
+        "pages/trend/trend",
+        "pages/tongji/tongji",
+        "pages/fujin/fujin",
+        "pages/guide/guide",
+        "pages/details/details"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#6CB140",
+        "navigationBarTitleText": "知疫",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#999",
+        "selectedColor": "#333",
+        "borderStyle": "black",
+        "position": "bottom",
+        "backgroundColor": "#fff",
+        "list": [{
+                "pagePath": "pages/index/index",
+                "text": "疫情速递",
+                "iconPath": "assets/icons/express.png",
+                "selectedIconPath": "assets/icons/express-active.png"
+            },
+            {
+                "pagePath": "pages/trend/trend",
+                "text": "趋势",
+                "iconPath": "assets/icons/trend.png",
+                "selectedIconPath": "assets/icons/trend-active.png"
+            },
+            {
+                "pagePath": "pages/tongji/tongji",
+                "text": "统计",
+                "iconPath": "assets/icons/Statistics.png",
+                "selectedIconPath": "assets/icons/Statistics-active.png"
+
+            },
+            {
+                "pagePath": "pages/fujin/fujin",
+                "text": "附近",
+                "iconPath": "assets/icons/position.png",
+                "selectedIconPath": "assets/icons/position-active.png"
+            },
+            {
+              "pagePath": "pages/fujin/fujin",
+              "text": "指南",
+              "iconPath": "assets/icons/guide.png",
+              "selectedIconPath": "assets/icons/guide-active.png"
+          }
+
+        ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
 }
