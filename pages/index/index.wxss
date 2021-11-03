@@ -1,0 +1,108 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #F2F6FC;
+  height: 150%;
+}
+.container .header {
+  flex: 1;
+  height: 0;
+}
+.container .header image {
+  width: 100%;
+  position: fixed;
+  top: -55px;
+}
+.container .content {
+  padding: 3rpx 40rpx 40rpx;
+  width: 100%;
+  height: 100%;
+  background-color: #F2F6FC;
+}
+.container .content .dynamic {
+  width: 85%;
+  height: 500rpx;
+  background-color: #fff;
+  margin-top: 200rpx;
+  border-radius: 20rpx;
+  padding: 10rpx 20rpx 0;
+}
+.container .content .dynamic .title1 {
+  font-size: 34rpx;
+  font-weight: bold;
+  margin-left: 30rpx;
+  padding-top: 20rpx;
+  display: inline-block;
+}
+.container .content .dynamic .grid {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.container .content .dynamic .grid .gridItem {
+  width: 25%;
+  margin-top: 30rpx;
+}
+.container .content .dynamic .grid .gridItem image {
+  width: 60rpx;
+  height: 60rpx;
+  display: block;
+  margin: 10rpx auto;
+}
+.container .content .dynamic .grid .gridItem .number {
+  font-size: 40rpx;
+  font-weight: 600;
+  display: block;
+}
+.container .content .dynamic .grid .gridItem .type {
+  font-size: 24rpx;
+  color: #888;
+}
+.container .content .list {
+  margin-top: 40rpx;
+  border-radius: 20rpx;
+  width: 83%;
+  background-color: #fff;
+  padding: 30rpx;
+}
+.container .content .list .title2 {
+  font-size: 34rpx;
+  font-weight: bold;
+  display: block;
+}
+.container .content .list .remark {
+  font-size: 24rpx;
+  color: #999;
+}
+.container .content .list .table {
+  border: 0px solid darkgray;
+  font-size: 12px;
+  margin-top: 10rpx;
+}
+.container .content .list .table .head {
+  display: flex;
+  text-align: center;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.container .content .list .table .head .th {
+  background-color: #F5F6F6;
+  height: 50rpx;
+  font-size: 28rpx;
+  flex: 1;
+  line-height: 50rpx;
+  text-align: center;
+}
+.container .content .list .table .body {
+  display: flex;
+  text-align: center;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.container .content .list .table .body .td {
+  height: 50rpx;
+  flex: 1;
+  line-height: 50rpx;
+  text-align: center;
+  font-size: 26rpx;
+}

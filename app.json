@@ -9,9 +9,10 @@
     ],
     "window": {
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#6CB140",
+        "navigationBarBackgroundColor": "#0B72F0",
         "navigationBarTitleText": "知疫",
-        "navigationBarTextStyle": "black"
+        "navigationBarTextStyle": "white"
+
     },
     "tabBar": {
         "color": "#999",
@@ -45,11 +46,11 @@
                 "selectedIconPath": "assets/icons/position-active.png"
             },
             {
-              "pagePath": "pages/fujin/fujin",
-              "text": "指南",
-              "iconPath": "assets/icons/guide.png",
-              "selectedIconPath": "assets/icons/guide-active.png"
-          }
+                "pagePath": "pages/guide/guide",
+                "text": "指南",
+                "iconPath": "assets/icons/guide.png",
+                "selectedIconPath": "assets/icons/guide-active.png"
+            }
 
         ]
     },

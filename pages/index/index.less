@@ -1,0 +1,125 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: #F2F6FC;
+    height: 150%;
+
+    .header {
+        flex: 1;
+        height: 0;
+        image {
+            width: 100%;
+            position: fixed;
+            top: -55px;
+        }
+    }
+
+    .content {
+        padding: 3rpx 40rpx 40rpx;
+        width: 100%;
+        height: 100%;
+        background-color: #F2F6FC;
+        .dynamic {
+            width: 85%;
+            height: 500rpx;
+            background-color: #fff;
+            margin-top: 200rpx;
+            border-radius: 20rpx;
+            padding: 10rpx 20rpx 0;
+
+            .title1 {
+                font-size: 34rpx;
+                font-weight: bold;
+                margin-left: 30rpx;
+                padding-top: 20rpx;
+                display: inline-block;
+            }
+
+            .grid {
+                display: flex;
+                flex-wrap: wrap;
+                text-align: center;
+                .gridItem {
+                    width: 25%;
+                    margin-top: 30rpx;
+                    image {
+                        width: 60rpx;
+                        height: 60rpx;
+                        display: block;
+                        margin: 10rpx auto;
+                    }
+
+                    .number {
+                        font-size: 40rpx;
+                        font-weight: 600;
+                        display: block;
+                    }
+
+                    .type {
+                        font-size: 24rpx;
+                        color: #888;
+                    }
+                }
+            }
+        }
+
+        .list {
+            margin-top: 40rpx;
+            border-radius: 20rpx;
+            width: 83%;
+            background-color: #fff;
+            padding: 30rpx;
+            
+
+            .title2 {
+                font-size: 34rpx;
+                font-weight: bold;
+                display: block;
+            }
+
+            .remark {
+                font-size: 24rpx;
+                color: #999;
+            }
+
+            .table {
+                border: 0px solid darkgray;
+                font-size: 12px;
+                margin-top: 10rpx;
+
+                .head {
+                    display: flex;
+                    text-align: center;
+                    height: 50rpx;
+                    line-height: 50rpx;
+
+                    .th {
+                        background-color: #F5F6F6;
+                        height: 50rpx;
+                        font-size: 28rpx;
+                        flex: 1;
+                        line-height: 50rpx;
+                        text-align: center;
+                    }
+                }
+                
+
+                .body {
+                    display: flex;
+                    text-align: center;
+                    height: 50rpx;
+                    line-height: 50rpx;
+
+                    .td {
+                        height: 50rpx;
+                        flex: 1;
+                        line-height: 50rpx;
+                        text-align: center;
+                        font-size: 26rpx;
+                    }
+
+                }
+            }
+        }
+    }
+}

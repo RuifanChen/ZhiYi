@@ -1,0 +1,70 @@
+<view class="container">
+    <view class="header">
+        <image src="/assets/img/bg-img.png " mode="widthFix" lazy-load="false" />
+    </view>
+    <scroll-view class="content" scroll-y="{{true}}">
+        <view class="dynamic">
+            <text class="title1">实时疫情动态</text>
+            <view class="grid" column-num="4" border="{{ true }}">
+                <view class="gridItem">
+                    <image src="/assets/icons/bingdu.png" mode="widthFix"/>
+                    <text class="number" style="color:#FF6A57">{{xyqz}}</text>
+                    <text class="type">现有确诊</text>
+                </view>
+                <view  class="gridItem">
+                    <image src="/assets/icons/wuzhengzhuang.png" mode="widthFix"/>
+                    <text class="number" style="color:#E86D48">{{wzz}}</text>
+                    <text class="type">无症状</text>
+                </view>
+                <view  class="gridItem">
+                    <image src="/assets/icons/xzzy.png" mode="widthFix"/>
+                    <text class="number" style="color:#F3AF17">{{xzzy}}</text>
+                    <text class="type">新增治愈</text>
+                </view>
+                <view  class="gridItem">
+                    <image src="/assets/icons/zhongzheng.png" mode="widthFix"/>
+                    <text class="number" style="color:#545499">{{xzsw}}</text>
+                    <text class="type">新增死亡</text>
+                </view>
+                <view  class="gridItem">
+                    <image src="/assets/icons/rentou.png" mode="widthFix"/>
+                    <text class="number" style="color:#E83132">{{ljqz}}</text>
+                    <text class="type">累计确诊</text>
+                </view>
+                <view  class="gridItem">
+                    <image src="/assets/icons/jingwai.png" mode="widthFix"/>
+                    <text class="number" style="color:#476DA0">{{jwsr}}</text>
+                    <text class="type">境外输入</text>
+                </view>
+                <view  class="gridItem">
+                    <image src="/assets/icons/zhiyu.png" mode="widthFix"/>
+                    <text class="number" style="color:#3EAEB5">{{ljzy}}</text>
+                    <text class="type">累计治愈</text>
+                </view>
+                <view  class="gridItem">
+                    <image src="/assets/icons/siwang.png" mode="widthFix"/>
+                    <text class="number" style="color:#41454A">{{ljsw}}</text>
+                    <text class="type">累计死亡</text>
+                </view>
+            </view>
+        </view>
+        <view class="list">
+            <text class="title2">疫情速递</text>
+            <text class="remark">该数据为31个省（自治区、直辖市）本土新增病例，不包含港澳台新增与各地区境外输入病例</text>
+            <view class="table">
+                <view class="head">
+                    <view class="th">地区</view>
+                    <view class="th">城市</view>
+                    <view class="th">新增病例</view>
+                    <view class="th">现有病例</view>
+                </view>
+                <view class="body" wx:for="{{newsdata}}" wx:for-item="item" wx:key="key">
+                    <view class="td" style="color: #1E92FF;">{{item.area}}</view>
+                    <view class="td">{{item.city}}</view>
+                    <view class="td" style="color: red">{{item.confirmAddDesc}}</view>
+                    <view class="td" style="color: orange">{{item.confirmNowDesc}}</view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>
