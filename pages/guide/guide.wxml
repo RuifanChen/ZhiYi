@@ -27,7 +27,7 @@
             <view class="box">
                 <view bindtap="click4">
                     <h1>走进疫情</h1>
-                    <image src="/assets/img/bj-img5/src=http___imgcache.dealmoon.com_thumbimg.dealmoon.com_dealmoon_ec1_c38_9a0_33db4c2b64b097db5932988.jpg_1280_1280_3_ff89.jpg&refer=http___imgcache.dealmoon@2x.png" mode="widthFix" />
+                    <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fzhuhaidaily.hizh.cn%2Fresfile%2F2020-04-21%2F11%2F11p1_b.jpg&refer=http%3A%2F%2Fzhuhaidaily.hizh.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1638596658&t=15a3d3e7fa3dc6a344420df59154f4ea" mode="widthFix" />
                     <view class="yh">中国式防疫，到底有多“硬核”。</view>
                 </view>
                 <view class="box-text" bindtap="click5">

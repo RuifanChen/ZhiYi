@@ -9,10 +9,9 @@
   font-family: "微软雅黑";
 }
 .box view span {
-  font-size: 31rpx;
+  font-size: 16rpx;
   color: #424242;
   font-family: "微软雅黑";
-  font-weight: 600;
 }
 .box .top {
   font-size: 40rpx;
