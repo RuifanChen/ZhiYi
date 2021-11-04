@@ -1,2 +1,37 @@
-<!--pages/trend/trend.wxml-->
-<text>pages/trend/trend.wxml</text>
+<view class="container">
+    <!-- 顶部大图 -->
+    <view class="header">
+        <image src="/assets/img/bg-img2.png " mode="widthFix" lazy-load="false" />
+    </view>
+    <!-- 头部文字 -->
+    <scroll-view class="content" scroll-y="{{true}}">
+        <view class="trend">
+            <view class="title1">
+                <text class="title-grobal">全国总计新增确诊&新增境外输入确诊趋势</text>
+                <text class="title-unit">单位: 例</text>
+            </view>
+            <view class="picture">
+                <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+            </view>
+        </view>
+        <view class="infos">
+            <view class="title2">
+                疫情资讯
+                <text class="date">{{time}}</text>
+            </view>
+            <van-collapse value="{{ activeNames }}" bind:change="onChange" wx:for="{{list}}" wx:for-item="item" wx:key="id" class="infomation" border="{{false}}">
+                <view class="box" >
+                    <view class="time">
+                        <image class="circle" src="/assets/img/circle.png" mode="widthFix" />
+                        <text class="time1">
+                            {{item.pubDateStr}}
+                        </text>
+                    </view>
+                    <van-collapse-item title="{{item.title}}" name="{{item.id}}" border="{{false}}">
+                        <view class="summary" border="{{false}}">{{item.summary}}</view>
+                    </van-collapse-item>
+                </view>
+            </van-collapse>
+        </view>
+    </scroll-view>
+</view>

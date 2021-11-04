@@ -1,1 +1,111 @@
-/* pages/trend/trend.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #F2F6FC;
+  height: 150%;
+}
+.container .header {
+  flex: 1;
+}
+.container .header image {
+  width: 100%;
+  position: fixed;
+  top: -55px;
+}
+.container .content {
+  padding: 3rpx 40rpx 40rpx;
+  background-color: #F2F6FC;
+}
+.container .content .trend {
+  width: 85%;
+  height: 100%;
+  background-color: #fff;
+  margin-top: 200rpx;
+  border-radius: 20rpx;
+  padding: 30rpx 20rpx 0;
+}
+.container .content .trend .title1 {
+  margin-left: 0.5rem;
+}
+.container .content .trend .title1 .title-grobal {
+  display: block;
+  margin-top: 0.7rem;
+  font: normal 700 1.1rem Arial, Helvetica, sans-serif;
+  color: #464545;
+}
+.container .content .trend .title1 .title-unit {
+  margin-top: 2.7rem;
+  color: gray;
+  font-size: 22rpx;
+}
+.container .content .trend .picture {
+  height: 500rpx;
+}
+.container .content .infos {
+  width: 85%;
+  height: 100%;
+  background-color: #fff;
+  margin-top: 50rpx;
+  border-radius: 20rpx;
+  padding: 30rpx 20rpx 0;
+}
+.container .content .infos .title2 {
+  margin-left: 0.5rem;
+  font-size: 30rpx;
+  font-weight: bolder;
+  margin-bottom: 30rpx;
+}
+.container .content .infos .title2 .date {
+  float: right;
+}
+.container .content .infos .infomation .box {
+  height: 100%;
+  width: 100%;
+  border-left: 1px solid #C0D9FD;
+  margin-left: 18rpx;
+}
+.container .content .infos .infomation .van-collapse-item__content {
+  padding: 0;
+  width: 97%;
+}
+.container .content .infos .infomation .van-collapse-item__content .summary {
+  background-color: #FAFBFD;
+  padding: 20rpx;
+  margin-left: 40rpx;
+}
+.container .content .infos .infomation .index--van-cell {
+  margin-top: 0;
+  background-color: #FAFBFD;
+  padding: 10rpx 0rpx 10rpx 20rpx;
+  width: 90%;
+  margin-left: 45rpx;
+  margin-bottom: 20rpx;
+}
+.container .content .infos .infomation .time {
+  position: relative;
+  font-size: 26rpx;
+  color: darkgray;
+  margin-left: -16.4rpx;
+  line-height: 38rpx ;
+}
+.container .content .infos .infomation .time .circle {
+  width: 30rpx;
+  height: 30rpx;
+}
+.container .content .infos .infomation .time .time1 {
+  position: absolute;
+  margin-left: 20rpx;
+  margin-top: -40rpx;
+  margin-bottom: 10rpx;
+}
+.container .content .infos .infomation .van-cell__title {
+  font-size: 26rpx;
+  font-weight: 500;
+}
+.content {
+  color: #444;
+}
+.van-cell__title {
+  font-size: 28rpx;
+  font-weight: bolder;
+}

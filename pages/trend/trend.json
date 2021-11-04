@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "ec-canvas": "../../components/ec-canvas/ec-canvas",
+    "van-cell": "../../components/vant/cell/index",
+    "van-cell-group": "../../components/vant/cell-group/index",
+    "van-collapse": "../../components/vant/collapse/index",
+    "van-collapse-item": "../../components/vant/collapse-item/index"
+  }
 }
