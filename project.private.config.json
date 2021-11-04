@@ -1,0 +1,30 @@
+{
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "pages/trend/trend",
+                    "pathName": "pages/trend/trend",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/trend/trend",
+                    "pathName": "pages/trend/trend",
+                    "query": "",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}
