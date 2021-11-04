@@ -30,3 +30,6 @@ export function requestGet(url, data) {
         });
     });
 }
+
+
+// export var shopDetailURL = "https://api.webhunt.cn/api/v1/pages/news"     //GET请求

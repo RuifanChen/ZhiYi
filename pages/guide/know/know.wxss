@@ -1,0 +1,23 @@
+.box {
+  margin: 0rpx 30rpx;
+}
+.box view {
+  font-size: 28rpx;
+  color: #525050;
+  line-height: 40rpx;
+  letter-spacing: 2rpx;
+  font-family: "微软雅黑";
+  text-indent: 40rpx;
+}
+.box .top {
+  font-size: 40rpx;
+  color: #4e4e4e;
+  margin-top: 30rpx;
+  margin-bottom: 20rpx;
+  font-family: "微软雅黑";
+  font-weight: 600;
+  line-height: 50rpx;
+}
+.box image {
+  width: 100%;
+}

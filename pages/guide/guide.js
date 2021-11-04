@@ -1,66 +1,45 @@
 // pages/guide/guide.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    pageIndex:1,
+    gudie:[]
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  
+  click4: function (event) {
+    wx.navigateTo({
+      url: "/pages/guide/hard/hard",
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  click5: function (event) {
+    wx.navigateTo({
+      url: "/pages/guide/protect/protect",
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  click6: function (event) {
+    wx.navigateTo({
+      url: "/pages/guide/indoor/indoor",
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  click7: function (event) {
+    wx.navigateTo({
+      url: "/pages/guide/know/know",
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  click8: function (event) {
+    wx.switchTab({
+      url: "/pages/index/index",
+    });
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  click9: function (event) {
+    wx.navigateTo({
+      url: "/pages/guide/doctor/doctor",
+    });
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+// async getListData(){
+//   const result = await requestGet('https://wechat.wecity.qq.com/api/THPneumoniaOuterServiceJq/getAreaContentsSub',{_limit:3})
+//   console.log(result)
+//   this.setData({
+//     lis:result
+//   })
+// }
 })

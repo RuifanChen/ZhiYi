@@ -5,11 +5,20 @@
         "pages/tongji/tongji",
         "pages/fujin/fujin",
         "pages/guide/guide",
-        "pages/details/details"
+        "pages/details/details",
+        "pages/guide/lis/lis",
+        "pages/guide/hand/hand",
+        "pages/guide/Bodybuilding/Bodybuilding",
+        "pages/guide/people/people",
+        "pages/guide/indoor/indoor",
+        "pages/guide/protect/protect",
+        "pages/guide/hard/hard",
+        "pages/guide/doctor/doctor",
+        "pages/guide/know/know"
     ],
     "window": {
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#6CB140",
+        "navigationBarBackgroundColor": "#0B72F0",
         "navigationBarTitleText": "知疫",
         "navigationBarTextStyle": "black"
     },
@@ -45,7 +54,7 @@
                 "selectedIconPath": "assets/icons/position-active.png"
             },
             {
-              "pagePath": "pages/fujin/fujin",
+              "pagePath": "pages/guide/guide",
               "text": "指南",
               "iconPath": "assets/icons/guide.png",
               "selectedIconPath": "assets/icons/guide-active.png"

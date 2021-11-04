@@ -1,2 +1,65 @@
-<!--pages/guide/guide.wxml-->
-<text>pages/guide/guide.wxml</text>
+<view class="container">
+    <view class="header">
+        <image src="/assets/img/bj-img5/图层 26@2x.png" mode="widthFix"></image>
+    </view>
+    <scroll-view class="content" scroll-y="{{true}}">
+        <!-- 中间样式 -->
+        <view class="dynamic">
+            <van-grid column-num="3" border="{{ false }}">
+                <van-grid-item use-slot bindtap="click7">
+                    <image style="width: 50rpx; height: 50rpx;" src="/assets/img/bj-img5/图层 24@2x.png" />
+                    <h1>防疫指南</h1>
+                </van-grid-item>
+                <van-grid-item use-slot bindtap="click8">
+                    <image style="width: 50rpx; height: 50rpx;" src="/assets/img/bj-img5/图层 22@2x.png" />
+                    <h1>
+                        <h>一线疫报</h>
+                    </h1>
+                </van-grid-item>
+                <van-grid-item use-slot bindtap="click9">
+                    <image style="width: 50rpx; height: 50rpx;" src="/assets/img/bj-img5/图层 23@2x.png" />
+                    <h1>我们的故事</h1>
+                </van-grid-item>
+            </van-grid>
+        </view>
+        <!-- 走近疫情 -->
+        <view class="dynamic1">
+            <view class="box">
+                <view bindtap="click4">
+                    <h1>走进疫情</h1>
+                    <image src="/assets/img/bj-img5/src=http___imgcache.dealmoon.com_thumbimg.dealmoon.com_dealmoon_ec1_c38_9a0_33db4c2b64b097db5932988.jpg_1280_1280_3_ff89.jpg&refer=http___imgcache.dealmoon@2x.png" mode="widthFix" />
+                    <view class="yh">中国式防疫，到底有多“硬核”。</view>
+                </view>
+                <view class="box-text" bindtap="click5">
+                    <van-grid column-num="1" border="{{ false }}">
+                        <van-grid-item use-slot>
+                            <image src="/assets/img/bj-img5/82bd2e364a2974bf53de6e0d30eef174@2x.png" />
+                        </van-grid-item>
+                    </van-grid>
+                    <span>疫情常态化防控相关防护指南</span>
+                </view>
+                <view class="box-text" bindtap="click6">
+                    <van-grid column-num="1" border="{{ false }}">
+                        <van-grid-item use-slot>
+                            <image src="/assets/img/bj-img5/c2e64730368dbb4d0933b4a082f44533@2x.png" />
+                        </van-grid-item>
+                    </van-grid>
+                    <span>需要注意拿些个人防护事项</span>
+                </view>
+            </view>
+        </view>
+        <!-- 小图标 -->
+        <view class="dynamic2">
+            <view class="box2">
+                <h1>生活须知，健康你我</h1>
+                <view class="box2-text"></view>
+                <van-grid border="false">
+                    <van-grid-item icon="/assets/img/bj-img5/医用口罩@2x.png" text="出行戴口罩" url="/pages/guide/lis/lis" />
+                    <van-grid-item icon="/assets/img/bj-img5/肌肉@2x.png" text="勤洗手" url="/pages/guide/hand/hand" />
+                    <van-grid-item icon="/assets/img/bj-img5/消毒洗手液@2x.png" text="多锻炼" url="/pages/guide/Bodybuilding/Bodybuilding" />
+                    <van-grid-item icon="/assets/img/bj-img5/疫情防控@2x.png" text="人口聚集" url="/pages/guide/people/people" />
+                </van-grid>
+            </view>
+        </view>
+    </scroll-view>
+</view>

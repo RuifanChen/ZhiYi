@@ -1,0 +1,12 @@
+<view class="box">
+    <view class="top">为了您和他人的健康，请尽量避免到人口密集的地区！</view>
+      <view>1,避免去人群密集的地方。</view>  
+      <image src="https://img2.baidu.com/it/u=879409792,1614451978&fm=26&fmt=auto" mode="widthFix"></image>  
+      <view>2,切勿聚餐,避免去人流密集区。</view>  
+      <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20200227%2F325fed2d76fa44b28b786e49afaa199b.jpeg&refer=http%3A%2F%2F5b0988e595225.cdn.sohucs.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1638514264&t=bc8a3d86c5b079a61502c4ee262d437d" mode="widthFix"></image>  
+      <view>3,避免去人员密集场所,在公园,广场,景区...</view>  
+      <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fq_70%2Cc_zoom%2Cw_640%2Fimages%2F20200223%2Fbc7ff845ed174d11bac28925e0c5a43f.jpeg&refer=http%3A%2F%2F5b0988e595225.cdn.sohucs.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1638514330&t=e3a5d9fc6a0bdc8e22218611a5a2684f" mode="widthFix"></image>  
+      <view>4,  5米以上的社交距离</view>  
+      <image src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp2.itc.cn%2Fq_70%2Fimages03%2F20210117%2Fa88353c8b7d04f50987db6c248e120b7.jpeg&refer=http%3A%2F%2Fp2.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1638514397&t=9dd17230afdc024bd1917d44c0242ae6" mode="widthFix"></image>    
+</view>
+  

@@ -1,0 +1,90 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/guide/guide",
+          "pathName": "pages/guide/guide",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "\"pages/guide/lis/lis\"",
+          "pathName": "\"pages/guide/lis/lis\"",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/guide/lis/lis",
+          "pathName": "pages/guide/lis/lis",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/guide/hand/hand",
+          "pathName": "pages/guide/hand/hand",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/guide/Bodybuilding/Bodybuilding",
+          "pathName": "pages/guide/Bodybuilding/Bodybuilding",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/guide/people/people",
+          "pathName": "pages/guide/people/people",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/guide/indoor/indoor",
+          "pathName": "pages/guide/indoor/indoor",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/guide/protect/protect",
+          "pathName": "pages/guide/protect/protect",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/guide/hard/hard",
+          "pathName": "pages/guide/hard/hard",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/guide/doctor/doctor",
+          "pathName": "pages/guide/doctor/doctor",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/guide/know/know",
+          "pathName": "pages/guide/know/know",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

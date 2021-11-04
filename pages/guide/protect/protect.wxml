@@ -1,0 +1,36 @@
+<view class="box">
+    <view class="top">关于新型冠状病毒，你需要知道的知识和应对方式!</view>
+    <image src="https://inews.gtimg.com/newsapp_bt/0/11384459024/641" mode="widthFix" ></image>
+    <view class="top">什么是冠状病毒？</view> 
+    <view >冠状病毒是一个大型病毒家族，已知可引起感冒以及中东呼吸综合征（MERS）和严重急性呼吸综合征（SARS）等较严重疾病。</view> 
+    <view class="top">什么是新型冠状病毒？</view> 
+    <view >新型冠状病毒是以前从未在人体中发现的冠状病毒新毒株。</view> 
+    <view class="top">人可能会感染新型的动物源冠状病毒吗？</view> 
+    <view >详细调查结果显示，中国2002年发生了从果子狸传至人的SARS冠状病毒疫情，沙特阿拉伯2012年发生了从单峰骆驼传至人的中东呼吸综合征冠状病毒疫情。一些已知的冠状病毒在动物中传播，但尚未感染人类。随着全球监测工作的改善，可能会发现更多冠状病毒。</view> 
+    <view class="top">人感染了冠状病毒后会有哪些症状？</view> 
+    <view >症状因病毒而异，常见体征有呼吸道症状、发热、咳嗽、气促和呼吸困难等。在较严重病例中，感染可导致肺炎、严重急性呼吸综合征、肾衰竭，甚至死亡。</view> 
+    <view class="top">冠状病毒能够在人际传播吗？</view> 
+    <view >是的，一些冠状病毒可以在人际传播，人们通常是在住家、工作场所或医疗机构等地与感染者密切接触后受到感染。</view> 
+    <view class="top">有针对新型冠状病毒的疫苗吗？</view> 
+    <view >针对新疾病，并无现有可用疫苗。开发一新疫苗可能需要若干年时间。</view> 
+    <view class="top">新型冠状病毒能治疗吗？</view> 
+    <view >目前对于新型冠状病毒所致疾病没有特异治疗方法。但许多症状是可以处理的，因此需根据患者临床情况进行治疗。此外，对感染者的辅助护理可能非常有效。</view> 
+    <view class="top">医疗工作者是否有感染新型冠状病毒的风险？</view> 
+    <view >是的，由于医疗工作者与患者的接触多于一般人与患者的接触，医疗工作者有感染新型冠状病毒的风险。世卫组织建议医疗工作者坚持采取适当感染防控措施。</view> 
+    <view class="top">如何自我防护？</view> 
+    <view >减少接触和减少传播一系列疾病的标准建议包括，保持基本的手部和呼吸道卫生，坚持安全饮食习惯，并尽可能避免与任何表现出有呼吸道疾病症状（如咳嗽和打喷嚏等）的人密切接触。</view> 
+    <image src="https://img2.ynet.com/2020/01/20/73ec69afb5e196aada88ad985873462d_480x-_80.jpg" mode="widthFix" ></image>
+    <image src="https://img2.ynet.com/2020/01/20/c53c7a68d301575db62a856cc4bed64a_480x-_80.jpg" mode="widthFix" ></image>
+    <image src="https://img2.ynet.com/2020/01/20/ab970f711d6309b3f7f55c3290448885_480x-_80.jpg" mode="widthFix" ></image>
+    <image src="https://img2.ynet.com/2020/01/20/e38c4f24b95c8732ba3bd5d932483cba_480x-_80.jpg" mode="widthFix" ></image>
+    <view >国家卫健委：新型冠状病毒感染的肺炎疫情可防可控</view> 
+    <view >据国家卫生健康委官网消息，专家研判认为，当前疫情仍可防可控。但新型冠状病毒传染来源尚未找到，疫情传播途径尚未完全掌握，病毒变异仍需严密监控。</view> 
+    <view class="top">关于武汉病毒性肺炎，这5大谣言千万别信！</view> 
+    <view class="top">来看中国疾病预防控制中心发布的辟谣帖：</view>
+    <image src="https://img2.ynet.com/2020/01/20/d13092f0e210f7ed120c40a9b2cafc05_480x-_80.jpg" mode="widthFix" ></image>
+    <image src="https://img2.ynet.com/2020/01/20/d13092f0e210f7ed120c40a9b2cafc05_480x-_80.jpg" mode="widthFix" ></image>
+    <image src="https://img2.ynet.com/2020/01/20/11b76b67c58d8a1dec4feaec73bccb88_480x-_80.jpg" mode="widthFix" ></image>
+    <image src="https://img2.ynet.com/2020/01/20/11b76b67c58d8a1dec4feaec73bccb88_480x-_80.jpg" mode="widthFix" ></image>
+    <image src="https://img2.ynet.com/2020/01/20/9e0026891f71aca2fbb04dbf4cf34f77_480x-_80.jpg" mode="widthFix" ></image>
+    <image src="https://img2.ynet.com/2020/01/20/77acb95108e2dff114fa721a48cbcc40_480x-_80.jpg" mode="widthFix" ></image>
+</view>
