@@ -15,14 +15,13 @@
   top: -55px;
 }
 .container .content {
-  padding: 4rpx 40rpx 40rpx 36rpx;
   margin-top: 100px;
-  width: 100%;
+  width: 90%;
   height: 100%;
-  background-color: #F2F6FC;
+  padding: 37rpx ;
 }
 .container .content .dynamic {
-  width: 85%;
+  width: 94%;
   height: 146rpx;
   background-color: #fff;
   margin-top: 10rpx;
@@ -35,7 +34,7 @@
   margin-top: 10rpx;
 }
 .container .content .dynamic1 {
-  width: 85%;
+  width: 94%;
   height: 870rpx;
   background-color: #fff;
   margin-top: 40rpx;
@@ -43,7 +42,6 @@
   padding: 30rpx 20rpx 11rpx;
 }
 .container .content .dynamic1 .box {
-  width: 100%;
   position: relative;
 }
 .container .content .dynamic1 .box h1 {
@@ -83,8 +81,24 @@
 .container .content .dynamic1 .box .box-text span P {
   font-size: 32rpx;
 }
+.container .content .dynamic1 .box .box-text1 {
+  background-color: white;
+  display: flex;
+}
+.container .content .dynamic1 .box .box-text1 image {
+  margin-left: 30rpx;
+  width: 140rpx;
+  height: 140rpx;
+}
+.container .content .dynamic1 .box .box-text1 span {
+  font-size: 28rpx;
+  margin: auto;
+}
+.container .content .dynamic1 .box .box-text1 span P {
+  font-size: 32rpx;
+}
 .container .content .dynamic2 {
-  width: 85%;
+  width: 94%;
   height: 250rpx;
   background-color: #fff;
   margin-top: 40rpx;

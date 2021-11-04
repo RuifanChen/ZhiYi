@@ -38,7 +38,7 @@
                     </van-grid>
                     <span>疫情常态化防控相关防护指南</span>
                 </view>
-                <view class="box-text" bindtap="click6">
+                <view class="box-text1" bindtap="click6">
                     <van-grid column-num="1" border="{{ false }}">
                         <van-grid-item use-slot>
                             <image src="/assets/img/bj-img5/c2e64730368dbb4d0933b4a082f44533@2x.png" />
@@ -53,11 +53,11 @@
             <view class="box2">
                 <h1>生活须知，健康你我</h1>
                 <view class="box2-text"></view>
-                <van-grid border="false">
+                <van-grid border="{{false}}">
                     <van-grid-item icon="/assets/img/bj-img5/医用口罩@2x.png" text="出行戴口罩" url="/pages/guide/lis/lis" />
-                    <van-grid-item icon="/assets/img/bj-img5/肌肉@2x.png" text="勤洗手" url="/pages/guide/hand/hand" />
-                    <van-grid-item icon="/assets/img/bj-img5/消毒洗手液@2x.png" text="多锻炼" url="/pages/guide/Bodybuilding/Bodybuilding" />
-                    <van-grid-item icon="/assets/img/bj-img5/疫情防控@2x.png" text="人口聚集" url="/pages/guide/people/people" />
+                    <van-grid-item icon="/assets/img/bj-img5/消毒洗手液@2x.png" text="勤洗手" url="/pages/guide/hand/hand" />
+                    <van-grid-item icon="/assets/img/bj-img5/肌肉@2x.png" text="多锻炼" url="/pages/guide/Bodybuilding/Bodybuilding" />
+                    <van-grid-item icon="/assets/img/bj-img5/疫情防控@2x.png" text="居家防护" url="/pages/guide/people/people" />
                 </van-grid>
             </view>
         </view>
