@@ -1,4 +1,4 @@
-// pages/guide/guide.js
+
 Page({
   data: {
     pageIndex:1,
@@ -35,11 +35,5 @@ Page({
       url: "/pages/guide/doctor/doctor",
     });
   },
-// async getListData(){
-//   const result = await requestGet('https://wechat.wecity.qq.com/api/THPneumoniaOuterServiceJq/getAreaContentsSub',{_limit:3})
-//   console.log(result)
-//   this.setData({
-//     lis:result
-//   })
-// }
+
 })
