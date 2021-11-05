@@ -32,7 +32,6 @@ function  GetDateStrArr(AddDayCount) {
 }
 
 
-
 module.exports = {
   formatTime: formatTime,
   GetDateStrArr:GetDateStrArr

@@ -31,8 +31,3 @@ export function requestGet(url, data) {
     });
 }
 
-
-export var SlidesURL = "https://locally.uieee.com/slides"                //GET请求
-export var CategoryesURL = "https://locally.uieee.com/categories"        //GET请求
-export var CategoryshopsURL = "https://locally.uieee.com/categories/";   //GET请求  ${this.id}/shops
-export var ShopDetailURL = "https://locally.uieee.com/shops/"            //GET请求   :id

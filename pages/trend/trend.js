@@ -1,10 +1,12 @@
 import * as echarts from '../../components/ec-canvas/echarts';
 import {
-  requestGet,
-  CategoryshopsURL
+  requestGet
 } from "../../utils/request";
-import {GetDateStrArr} from '../../utils/util'
+import {
+  GetDateStrArr
+} from '../../utils/util';
 import Toast from "../../components/vant/toast/toast";
+import xchina from '../../components/ec-canvas/999';
 var util = require('../../utils/util.js');
 const app = getApp();
 
@@ -19,14 +21,12 @@ function initChart(canvas, width, height, dpr) {
 
   const colors = ['#EE6666', '#5470C6'];
 
-
   // 指定图表的配置项和数据
   var option = {
     color: colors,
     legend: {
       data: ['总新增确诊', '新增境外输入'],
       left: 130,
-      
     },
     //网格
     grid: {
@@ -97,11 +97,11 @@ function initChart(canvas, width, height, dpr) {
 
 Page({
   data: {
+    time: '',
     activeName: ['1'],
     ec: {
       onInit: initChart
     },
-    time: '',
   },
 
   onChange(event) {
@@ -109,8 +109,8 @@ Page({
       activeNames: event.detail,
     });
   },
-  
-  onLoad: function (options) {
+
+  onReady: function (options) {
     this.getListData();
     this.setData({
       time: util.formatTime(new Date())
@@ -118,18 +118,29 @@ Page({
 
   },
 
-  
   async getListData() {
     const result = await requestGet("http://api.tianapi.com/ncov/index?key=5d206a0670dfbaf479318be06a186026");
     var newst = result.newslist[0].news;
     this.setData({
       list: newst,
     })
-  },
-  
 
-  onReady() {
+    function days(day) {
+      return xchina.data[xchina.data.length - day].confirmedIncr
+    };
 
+    function days1(day1) {
+      return xchina.data[xchina.data.length - day1].suspectedCountIncr
+    }
+
+    this.echartsComponent = this.selectComponent("#mychart-dom-line");
+    this.echartsComponent.chart.setOption({
+      series: [{
+        data: [days(15), days(14),days(13), days(12), days(11), days(10), days(9), days(8), days(7), days(6), days(5), days(4), days(3), days(2), days(1)]
+      }, {
+        data: [days1(15), days1(14),days1(13), days1(12), days1(11), days1(10), days1(9), days1(8), days1(7), days1(6), days1(5), days1(4), days1(3), days1(2), days1(1)]
+      }]
+    });
   },
-  
+
 });
