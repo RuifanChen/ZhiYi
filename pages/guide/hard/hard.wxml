@@ -121,8 +121,8 @@
   </view>
 </view>
 
-   <view class="top">还有网友根据各种土味广播，剪辑成了一段洗脑rap。
-前方高能，慎点！</view>
+   <view class="top">还有网友根据各种土味广播，剪辑成了一段洗脑rap。</view>
+   <view class="top"><p>前方高能，慎点！</p></view>
    <view class="page-body">
   <view class="page-section tc">
     <video 

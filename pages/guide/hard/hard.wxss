@@ -37,6 +37,8 @@
   width: 100%;
 }
 .box .page-body .page-section {
-  text-indent: -10rpx;
+  width: 100%;
+}
+.box .page-body .page-section video {
   width: 100%;
 }
