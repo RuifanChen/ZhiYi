@@ -1,11 +1,11 @@
-import { canIUseModel } from '../common/version';
 import { VantComponent } from '../common/component';
-import { useParent } from '../common/relation';
 VantComponent({
     field: true,
-    relation: useParent('radio-group', function () {
-        this.updateFromParent();
-    }),
+    relation: {
+        name: 'radio-group',
+        type: 'ancestor',
+        current: 'radio',
+    },
     classes: ['icon-class', 'label-class'],
     props: {
         name: null,
@@ -15,52 +15,34 @@ VantComponent({
         checkedColor: String,
         labelPosition: {
             type: String,
-            value: 'right',
+            value: 'right'
         },
         labelDisabled: Boolean,
         shape: {
             type: String,
-            value: 'round',
+            value: 'round'
         },
         iconSize: {
             type: null,
-            value: 20,
-        },
-    },
-    data: {
-        direction: '',
-        parentDisabled: false,
+            value: 20
+        }
     },
     methods: {
-        updateFromParent() {
-            if (!this.parent) {
-                return;
-            }
-            const { value, disabled: parentDisabled, direction } = this.parent.data;
-            this.setData({
-                value,
-                direction,
-                parentDisabled,
-            });
-        },
         emitChange(value) {
             const instance = this.parent || this;
             instance.$emit('input', value);
             instance.$emit('change', value);
-            if (canIUseModel()) {
-                instance.setData({ value });
-            }
         },
         onChange() {
-            if (!this.data.disabled && !this.data.parentDisabled) {
+            if (!this.data.disabled) {
                 this.emitChange(this.data.name);
             }
         },
         onClickLabel() {
-            const { disabled, parentDisabled, labelDisabled, name } = this.data;
-            if (!(disabled || parentDisabled) && !labelDisabled) {
+            const { disabled, labelDisabled, name } = this.data;
+            if (!disabled && !labelDisabled) {
                 this.emitChange(name);
             }
-        },
-    },
+        }
+    }
 });

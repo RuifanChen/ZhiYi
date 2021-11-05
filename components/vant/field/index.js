@@ -1,32 +1,25 @@
-import { nextTick } from '../common/utils';
 import { VantComponent } from '../common/component';
 import { commonProps, inputProps, textareaProps } from './props';
 VantComponent({
     field: true,
-    classes: ['input-class', 'right-icon-class', 'label-class'],
-    props: Object.assign(Object.assign(Object.assign(Object.assign({}, commonProps), inputProps), textareaProps), { size: String, icon: String, label: String, error: Boolean, center: Boolean, isLink: Boolean, leftIcon: String, rightIcon: String, autosize: null, required: Boolean, iconClass: String, clickable: Boolean, inputAlign: String, customStyle: String, errorMessage: String, arrowDirection: String, showWordLimit: Boolean, errorMessageAlign: String, readonly: {
+    classes: ['input-class', 'right-icon-class'],
+    props: Object.assign(Object.assign(Object.assign(Object.assign({}, commonProps), inputProps), textareaProps), { size: String, icon: String, label: String, error: Boolean, center: Boolean, isLink: Boolean, leftIcon: String, rightIcon: String, autosize: [Boolean, Object], readonly: {
             type: Boolean,
-            observer: 'setShowClear',
-        }, clearable: {
+            observer: 'setShowClear'
+        }, required: Boolean, iconClass: String, clearable: {
             type: Boolean,
-            observer: 'setShowClear',
-        }, clearTrigger: {
-            type: String,
-            value: 'focus',
-        }, border: {
+            observer: 'setShowClear'
+        }, clickable: Boolean, inputAlign: String, customStyle: String, errorMessage: String, arrowDirection: String, showWordLimit: Boolean, errorMessageAlign: String, border: {
             type: Boolean,
-            value: true,
+            value: true
         }, titleWidth: {
             type: String,
-            value: '6.2em',
-        }, clearIcon: {
-            type: String,
-            value: 'clear',
+            value: '90px'
         } }),
     data: {
         focused: false,
         innerValue: '',
-        showClear: false,
+        showClear: false
     },
     created() {
         this.value = this.data.value;
@@ -52,14 +45,11 @@ VantComponent({
         onClickIcon() {
             this.$emit('click-icon');
         },
-        onClickInput(event) {
-            this.$emit('click-input', event.detail);
-        },
         onClear() {
             this.setData({ innerValue: '' });
             this.value = '';
             this.setShowClear();
-            nextTick(() => {
+            wx.nextTick(() => {
                 this.emitChange();
                 this.$emit('clear', '');
             });
@@ -85,23 +75,16 @@ VantComponent({
             this.$emit('keyboardheightchange', event.detail);
         },
         emitChange() {
-            this.setData({ value: this.value });
-            nextTick(() => {
-                this.$emit('input', this.value);
-                this.$emit('change', this.value);
-            });
+            this.$emit('input', this.value);
+            this.$emit('change', this.value);
         },
         setShowClear() {
-            const { clearable, readonly, clearTrigger } = this.data;
+            const { clearable, readonly } = this.data;
             const { focused, value } = this;
-            let showClear = false;
-            if (clearable && !readonly) {
-                const hasValue = !!value;
-                const trigger = clearTrigger === 'always' || (clearTrigger === 'focus' && focused);
-                showClear = hasValue && trigger;
-            }
-            this.setData({ showClear });
+            this.setData({
+                showClear: clearable && focused && !!value && !readonly
+            });
         },
-        noop() { },
-    },
+        noop() { }
+    }
 });

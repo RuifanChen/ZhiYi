@@ -1,12 +1,11 @@
 /// <reference types="miniprogram-api-typings" />
-export declare type Action = 'confirm' | 'cancel' | 'overlay';
-interface DialogOptions {
+declare type DialogAction = 'confirm' | 'cancel';
+declare type DialogOptions = {
     lang?: string;
     show?: boolean;
     title?: string;
-    width?: string | number | null;
+    width?: string | number;
     zIndex?: number;
-    theme?: string;
     context?: WechatMiniprogram.Page.TrivialInstance | WechatMiniprogram.Component.TrivialInstance;
     message?: string;
     overlay?: boolean;
@@ -15,11 +14,7 @@ interface DialogOptions {
     className?: string;
     customStyle?: string;
     transition?: string;
-    /**
-     * @deprecated use beforeClose instead
-     */
     asyncClose?: boolean;
-    beforeClose?: null | ((action: Action) => Promise<void> | void);
     businessId?: number;
     sessionFrom?: string;
     overlayStyle?: string;
@@ -35,16 +30,18 @@ interface DialogOptions {
     showCancelButton?: boolean;
     closeOnClickOverlay?: boolean;
     confirmButtonOpenType?: string;
-}
-declare const Dialog: {
-    (options: DialogOptions): Promise<WechatMiniprogram.Component.TrivialInstance>;
-    alert(options: DialogOptions): Promise<WechatMiniprogram.Component.TrivialInstance>;
-    confirm(options: DialogOptions): Promise<WechatMiniprogram.Component.TrivialInstance>;
-    close(): void;
-    stopLoading(): void;
-    currentOptions: DialogOptions;
-    defaultOptions: DialogOptions;
-    setDefaultOptions(options: DialogOptions): void;
-    resetDefaultOptions(): void;
 };
+interface Dialog {
+    (options: DialogOptions): Promise<DialogAction>;
+    alert?: (options: DialogOptions) => Promise<DialogAction>;
+    confirm?: (options: DialogOptions) => Promise<DialogAction>;
+    close?: () => void;
+    stopLoading?: () => void;
+    install?: () => void;
+    setDefaultOptions?: (options: DialogOptions) => void;
+    resetDefaultOptions?: () => void;
+    defaultOptions?: DialogOptions;
+    currentOptions?: DialogOptions;
+}
+declare const Dialog: Dialog;
 export default Dialog;

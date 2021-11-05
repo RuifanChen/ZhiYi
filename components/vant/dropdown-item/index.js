@@ -1,53 +1,56 @@
-import { useParent } from '../common/relation';
 import { VantComponent } from '../common/component';
 VantComponent({
     field: true,
-    relation: useParent('dropdown-menu', function () {
-        this.updateDataFromParent();
-    }),
+    relation: {
+        name: 'dropdown-menu',
+        type: 'ancestor',
+        current: 'dropdown-item',
+        linked() {
+            this.updateDataFromParent();
+        }
+    },
     props: {
         value: {
             type: null,
-            observer: 'rerender',
+            observer: 'rerender'
         },
         title: {
             type: String,
-            observer: 'rerender',
+            observer: 'rerender'
         },
         disabled: Boolean,
         titleClass: {
             type: String,
-            observer: 'rerender',
+            observer: 'rerender'
         },
         options: {
             type: Array,
             value: [],
-            observer: 'rerender',
+            observer: 'rerender'
         },
-        popupStyle: String,
+        popupStyle: String
     },
     data: {
         transition: true,
         showPopup: false,
         showWrapper: false,
-        displayTitle: '',
+        displayTitle: ''
     },
     methods: {
         rerender() {
             wx.nextTick(() => {
-                var _a;
-                (_a = this.parent) === null || _a === void 0 ? void 0 : _a.updateItemListData();
+                this.parent && this.parent.updateItemListData();
             });
         },
         updateDataFromParent() {
             if (this.parent) {
-                const { overlay, duration, activeColor, closeOnClickOverlay, direction, } = this.parent.data;
+                const { overlay, duration, activeColor, closeOnClickOverlay, direction } = this.parent.data;
                 this.setData({
                     overlay,
                     duration,
                     activeColor,
                     closeOnClickOverlay,
-                    direction,
+                    direction
                 });
             }
         },
@@ -76,7 +79,6 @@ VantComponent({
             }
         },
         toggle(show, options = {}) {
-            var _a;
             const { showPopup } = this.data;
             if (typeof show !== 'boolean') {
                 show = !showPopup;
@@ -89,7 +91,7 @@ VantComponent({
                 showPopup: show,
             });
             if (show) {
-                (_a = this.parent) === null || _a === void 0 ? void 0 : _a.getChildWrapperStyle().then((wrapperStyle) => {
+                this.parent.getChildWrapperStyle().then((wrapperStyle) => {
                     this.setData({ wrapperStyle, showWrapper: true });
                     this.rerender();
                 });
@@ -97,6 +99,6 @@ VantComponent({
             else {
                 this.rerender();
             }
-        },
-    },
+        }
+    }
 });

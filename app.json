@@ -5,13 +5,14 @@
         "pages/tongji/tongji",
         "pages/fujin/fujin",
         "pages/guide/guide",
-        "pages/details/details"
+        "pages/details/details",
+        "pages/tongji/xiangqing/xiangqing"
     ],
     "window": {
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#6CB140",
+        "navigationBarBackgroundColor": "#0B72F0",
         "navigationBarTitleText": "知疫",
-        "navigationBarTextStyle": "black"
+        "navigationBarTextStyle": "white"
     },
     "tabBar": {
         "color": "#999",

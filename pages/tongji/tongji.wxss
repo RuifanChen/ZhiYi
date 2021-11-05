@@ -1,1 +1,243 @@
-/* pages/tongji/tongji.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #F2F6FC;
+  height: 150%;
+}
+.container .header {
+  flex: 1;
+  position: relative;
+}
+.container .header image {
+  width: 100%;
+  position: fixed;
+  top: -55px;
+}
+.container .header .top {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  margin-left: 30rpx;
+  margin-top: 40rpx;
+  color: #FFFFFF;
+}
+.container .header .top .all {
+  font-size: 40rpx;
+  margin-bottom: 20rpx;
+}
+.container .header .top .updata {
+  font-size: 26rpx;
+  font-weight: 200;
+}
+.container .header .top .time {
+  font-size: 26rpx;
+  font-weight: 200;
+}
+.container .content {
+  width: 90%;
+  margin: auto;
+  height: 100%;
+  background-color: #F2F6FC;
+}
+.container .content .statistics {
+  width: 100%;
+  margin: auto;
+  height: 100%;
+  background-color: #fff;
+  margin-top: 200rpx;
+  border-radius: 20rpx;
+  margin-bottom: 40rpx;
+}
+.container .content .statistics .title1 {
+  font-size: 34rpx;
+  font-weight: bold;
+  margin-left: 20rpx;
+  padding-top: 20rpx;
+  display: inline-block;
+}
+.container .content .statistics .grid {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  padding-bottom: 20rpx;
+}
+.container .content .statistics .grid .gridItem {
+  width: 33.33%;
+  margin-top: 30rpx;
+}
+.container .content .statistics .grid .gridItem image {
+  width: 60rpx;
+  height: 60rpx;
+  display: block;
+  margin: 10rpx auto;
+}
+.container .content .statistics .grid .gridItem .number {
+  font-size: 40rpx;
+  font-weight: 600;
+  display: block;
+}
+.container .content .statistics .grid .gridItem .type {
+  font-size: 24rpx;
+  color: #888;
+  display: block;
+}
+.container .content .statistics .grid .gridItem .jia {
+  font-size: 12px;
+  color: #ccc;
+  font-weight: 700;
+}
+.container .content .map {
+  height: 860rpx;
+  width: 100%;
+  margin: auto;
+  border-radius: 20rpx;
+  background-color: white;
+}
+.container .content .map .title1 {
+  width: 90%;
+  margin: auto;
+  height: 60rpx;
+  line-height: 80rpx;
+}
+.container .content .map .ditu {
+  border: 1px dashed #c8c8c8;
+  height: 760rpx;
+  width: 90%;
+  margin: auto;
+  box-sizing: border-box;
+}
+.container .content .table {
+  margin-top: 40rpx;
+  width: 100%;
+  background-color: white;
+}
+.container .content .table .tab .tabs1 .tabs1head {
+  display: flex;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.container .content .table .tab .tabs1 .tabs1head .adress {
+  background-color: #f8f8f8;
+  color: #777;
+  flex: 1;
+  border-right: 1px solid #dcdcdc;
+  border-left: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  border-top: 1px solid #dcdcdc;
+}
+.container .content .table .tab .tabs1 .tabs1head .nowqz {
+  color: #777;
+  background-color: #f8f8f8;
+  flex: 1;
+  border-right: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  border-top: 1px solid #dcdcdc;
+}
+.container .content .table .tab .tabs1 .tabs1head .allqz {
+  color: #777;
+  background-color: #f8f8f8;
+  flex: 1;
+  border-right: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  border-top: 1px solid #dcdcdc;
+}
+.container .content .table .tab .tabs1 .tabs1head .zhiliao {
+  color: #777;
+  background-color: #f8f8f8;
+  flex: 1;
+  border-right: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  border-top: 1px solid #dcdcdc;
+}
+.container .content .table .tab .tabs1 .tabs1head .death {
+  color: #777;
+  background-color: #f8f8f8;
+  flex: 1;
+  border-right: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  border-top: 1px solid #dcdcdc;
+}
+.container .content .table .tab .tabs1 .chinainfos {
+  background-color: #fff;
+  line-height: 60rpx;
+  height: 60rpx;
+  display: flex;
+  font-size: 13px;
+  box-sizing: border-box;
+  border-right: 1px solid #ccc;
+}
+.container .content .table .tab .tabs1 .chinainfos .infos {
+  color: #1E92FF;
+  text-align: center;
+  flex: 1;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.container .content .table .tab .tabs1 .findmore {
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #ccc;
+  background-color: #f6f6fc;
+}
+.container .content .table .tab .tabs1 .waiguoinfos {
+  line-height: 60rpx;
+  height: 60rpx;
+  display: flex;
+  font-size: 13px;
+  box-sizing: border-box;
+  border-right: 1px solid #ccc;
+}
+.container .content .table .tab .tabs1 .waiguoinfos .infos {
+  color: #1E92FF;
+  text-align: center;
+  flex: 1;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.container .content .table .tab .tabs1 .waiguoinfos .right {
+  border-right: 1px soild #ccc;
+}
+.container .content .van-tabs {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+.container .content .van-tabs .van-tabs__wrap {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+.container .content .van-tabs .van-tabs__wrap .van-tabs__scroll {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container .content .van-tabs .van-tabs__wrap .van-tabs__scroll .van-tabs__nav {
+  height: 100%;
+  width: 100%;
+  border: 0;
+  box-sizing: border-box;
+}
+.container .content .van-tabs .van-tabs__wrap .van-tabs__scroll .van-tabs__nav .van-tab {
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #E7F1FE;
+  box-sizing: border-box;
+}
+.container .content .fanye {
+  display: flex;
+}
+.container .content .fanye .btn {
+  flex: 1;
+}
+.container .content .fanye .btn button {
+  color: #1573F6;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #E7F1FE;
+}

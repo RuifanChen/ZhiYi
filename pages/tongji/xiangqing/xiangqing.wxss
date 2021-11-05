@@ -1,0 +1,63 @@
+.tabs1 .tabs1head {
+  display: flex;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.tabs1 .tabs1head .adress {
+  background-color: #f8f8f8;
+  color: #777;
+  flex: 1;
+  border-right: 1px solid #dcdcdc;
+  border-left: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  border-top: 1px solid #dcdcdc;
+}
+.tabs1 .tabs1head .nowqz {
+  color: #777;
+  background-color: #f8f8f8;
+  flex: 1;
+  border-right: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  border-top: 1px solid #dcdcdc;
+}
+.tabs1 .tabs1head .allqz {
+  color: #777;
+  background-color: #f8f8f8;
+  flex: 1;
+  border-right: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  border-top: 1px solid #dcdcdc;
+}
+.tabs1 .tabs1head .zhiliao {
+  color: #777;
+  background-color: #f8f8f8;
+  flex: 1;
+  border-right: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  border-top: 1px solid #dcdcdc;
+}
+.tabs1 .tabs1head .death {
+  color: #777;
+  background-color: #f8f8f8;
+  flex: 1;
+  border-right: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  border-top: 1px solid #dcdcdc;
+}
+.tabs1 .chinainfos {
+  line-height: 60rpx;
+  height: 60rpx;
+  display: flex;
+  font-size: 13px;
+  box-sizing: border-box;
+  border-right: 1px solid #ccc;
+}
+.tabs1 .chinainfos .infos {
+  color: #1E92FF;
+  text-align: center;
+  flex: 1;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+}

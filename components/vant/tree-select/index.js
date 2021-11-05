@@ -6,34 +6,30 @@ VantComponent({
         'main-active-class',
         'content-active-class',
         'main-disabled-class',
-        'content-disabled-class',
+        'content-disabled-class'
     ],
     props: {
         items: {
             type: Array,
-            observer: 'updateSubItems',
+            observer: 'updateSubItems'
         },
         activeId: null,
         mainActiveIndex: {
             type: Number,
             value: 0,
-            observer: 'updateSubItems',
+            observer: 'updateSubItems'
         },
         height: {
-            type: null,
-            value: 300,
+            type: [Number, String],
+            value: 300
         },
         max: {
             type: Number,
-            value: Infinity,
-        },
-        selectedIcon: {
-            type: String,
-            value: 'success',
-        },
+            value: Infinity
+        }
     },
     data: {
-        subItems: [],
+        subItems: []
     },
     methods: {
         // 当一个子项被选择时
@@ -62,7 +58,7 @@ VantComponent({
         updateSubItems() {
             const { items, mainActiveIndex } = this.data;
             const { children = [] } = items[mainActiveIndex] || {};
-            this.setData({ subItems: children });
-        },
-    },
+            return this.set({ subItems: children });
+        }
+    }
 });

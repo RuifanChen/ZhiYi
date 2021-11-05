@@ -1,31 +1,23 @@
 import { VantComponent } from '../common/component';
-import { useParent } from '../common/relation';
 VantComponent({
     props: {
         info: null,
         name: null,
         icon: String,
-        dot: Boolean,
-        iconPrefix: {
-            type: String,
-            value: 'van-icon',
-        },
+        dot: Boolean
     },
-    relation: useParent('tabbar'),
+    relation: {
+        name: 'tabbar',
+        type: 'ancestor',
+        current: 'tabbar-item',
+    },
     data: {
-        active: false,
-        activeColor: '',
-        inactiveColor: '',
+        active: false
     },
     methods: {
         onClick() {
-            const { parent } = this;
-            if (parent) {
-                const index = parent.children.indexOf(this);
-                const active = this.data.name || index;
-                if (active !== this.data.active) {
-                    parent.$emit('change', active);
-                }
+            if (this.parent) {
+                this.parent.onChange(this);
             }
             this.$emit('click');
         },
@@ -48,9 +40,9 @@ VantComponent({
             if (parentData.inactiveColor !== data.inactiveColor) {
                 patch.inactiveColor = parentData.inactiveColor;
             }
-            if (Object.keys(patch).length > 0) {
-                this.setData(patch);
-            }
-        },
-    },
+            return Object.keys(patch).length > 0
+                ? this.set(patch)
+                : Promise.resolve();
+        }
+    }
 });

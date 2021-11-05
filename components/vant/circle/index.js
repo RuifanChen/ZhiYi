@@ -1,9 +1,6 @@
-import { BLUE, WHITE } from '../common/color';
 import { VantComponent } from '../common/component';
-import { getSystemInfoSync } from '../common/utils';
-import { isObj } from '../common/validator';
-import { canIUseCanvas2d } from '../common/version';
-import { adaptor } from './canvas';
+import { isObj } from '../common/utils';
+import { BLUE, WHITE } from '../common/color';
 function format(rate) {
     return Math.min(Math.max(rate, 0), 100);
 }
@@ -15,93 +12,66 @@ VantComponent({
         text: String,
         lineCap: {
             type: String,
-            value: 'round',
+            value: 'round'
         },
         value: {
             type: Number,
             value: 0,
-            observer: 'reRender',
+            observer: 'reRender'
         },
         speed: {
             type: Number,
-            value: 50,
+            value: 50
         },
         size: {
             type: Number,
             value: 100,
-            observer() {
-                this.drawCircle(this.currentValue);
-            },
         },
         fill: String,
         layerColor: {
             type: String,
-            value: WHITE,
+            value: WHITE
         },
         color: {
-            type: null,
+            type: [String, Object],
             value: BLUE,
-            observer() {
-                this.setHoverColor().then(() => {
-                    this.drawCircle(this.currentValue);
-                });
-            },
+            observer: 'setHoverColor'
         },
         type: {
             type: String,
-            value: '',
+            value: ''
         },
         strokeWidth: {
             type: Number,
-            value: 4,
+            value: 4
         },
         clockwise: {
             type: Boolean,
-            value: true,
-        },
+            value: true
+        }
     },
     data: {
-        hoverColor: BLUE,
+        hoverColor: BLUE
     },
     methods: {
         getContext() {
-            const { type, size } = this.data;
-            if (type === '' || !canIUseCanvas2d()) {
-                const ctx = wx.createCanvasContext('van-circle', this);
-                return Promise.resolve(ctx);
+            if (!this.ctx) {
+                this.ctx = wx.createCanvasContext('van-circle', this);
             }
-            const dpr = getSystemInfoSync().pixelRatio;
-            return new Promise((resolve) => {
-                wx.createSelectorQuery()
-                    .in(this)
-                    .select('#van-circle')
-                    .node()
-                    .exec((res) => {
-                    const canvas = res[0].node;
-                    const ctx = canvas.getContext(type);
-                    if (!this.inited) {
-                        this.inited = true;
-                        canvas.width = size * dpr;
-                        canvas.height = size * dpr;
-                        ctx.scale(dpr, dpr);
-                    }
-                    resolve(adaptor(ctx));
-                });
-            });
+            return this.ctx;
         },
         setHoverColor() {
-            const { color, size } = this.data;
+            const { color, size, type } = this.data;
+            const context = type ? this.getContext(type) : this.getContext();
+            let hoverColor = color;
             if (isObj(color)) {
-                return this.getContext().then((context) => {
-                    const LinearColor = context.createLinearGradient(size, 0, 0, 0);
-                    Object.keys(color)
-                        .sort((a, b) => parseFloat(a) - parseFloat(b))
-                        .map((key) => LinearColor.addColorStop(parseFloat(key) / 100, color[key]));
-                    this.hoverColor = LinearColor;
-                });
+                const LinearColor = context.createLinearGradient(size, 0, 0, 0);
+                Object.keys(color)
+                    .sort((a, b) => parseFloat(a) - parseFloat(b))
+                    .map(key => LinearColor.addColorStop(parseFloat(key) / 100, color[key]));
+                hoverColor = LinearColor;
             }
-            this.hoverColor = color;
-            return Promise.resolve();
+            this.setData({ hoverColor });
         },
         presetCanvas(context, strokeStyle, beginAngle, endAngle, fill) {
             const { strokeWidth, lineCap, clockwise, size } = this.data;
@@ -123,25 +93,24 @@ VantComponent({
             this.presetCanvas(context, layerColor, 0, PERIMETER, fill);
         },
         renderHoverCircle(context, formatValue) {
-            const { clockwise } = this.data;
+            const { clockwise, hoverColor } = this.data;
             // 结束角度
             const progress = PERIMETER * (formatValue / 100);
             const endAngle = clockwise
                 ? BEGIN_ANGLE + progress
                 : 3 * Math.PI - (BEGIN_ANGLE + progress);
-            this.presetCanvas(context, this.hoverColor, BEGIN_ANGLE, endAngle);
+            this.presetCanvas(context, hoverColor, BEGIN_ANGLE, endAngle);
         },
         drawCircle(currentValue) {
-            const { size } = this.data;
-            this.getContext().then((context) => {
-                context.clearRect(0, 0, size, size);
-                this.renderLayerCircle(context);
-                const formatValue = format(currentValue);
-                if (formatValue !== 0) {
-                    this.renderHoverCircle(context, formatValue);
-                }
-                context.draw();
-            });
+            const { size, type } = this.data;
+            const context = type ? this.getContext(type) : this.getContext();
+            context.clearRect(0, 0, size, size);
+            this.renderLayerCircle(context);
+            const formatValue = format(currentValue);
+            if (formatValue !== 0) {
+                this.renderHoverCircle(context, formatValue);
+            }
+            context.draw();
         },
         reRender() {
             // tofector 动画暂时没有想到好的解决方案
@@ -150,44 +119,37 @@ VantComponent({
                 this.drawCircle(value);
                 return;
             }
-            this.clearMockInterval();
+            this.clearInterval();
             this.currentValue = this.currentValue || 0;
-            const run = () => {
-                this.interval = setTimeout(() => {
-                    if (this.currentValue !== value) {
-                        if (Math.abs(this.currentValue - value) < STEP) {
-                            this.currentValue = value;
-                        }
-                        else if (this.currentValue < value) {
-                            this.currentValue += STEP;
-                        }
-                        else {
-                            this.currentValue -= STEP;
-                        }
-                        this.drawCircle(this.currentValue);
-                        run();
+            this.interval = setInterval(() => {
+                if (this.currentValue !== value) {
+                    if (this.currentValue < value) {
+                        this.currentValue += STEP;
                     }
                     else {
-                        this.clearMockInterval();
+                        this.currentValue -= STEP;
                     }
-                }, 1000 / speed);
-            };
-            run();
+                    this.drawCircle(this.currentValue);
+                }
+                else {
+                    this.clearInterval();
+                }
+            }, 1000 / speed);
         },
-        clearMockInterval() {
+        clearInterval() {
             if (this.interval) {
-                clearTimeout(this.interval);
+                clearInterval(this.interval);
                 this.interval = null;
             }
-        },
+        }
     },
-    mounted() {
-        this.currentValue = this.data.value;
-        this.setHoverColor().then(() => {
-            this.drawCircle(this.currentValue);
-        });
+    created() {
+        const { value } = this.data;
+        this.currentValue = value;
+        this.drawCircle(value);
     },
     destroyed() {
-        this.clearMockInterval();
-    },
+        this.ctx = null;
+        this.clearInterval();
+    }
 });

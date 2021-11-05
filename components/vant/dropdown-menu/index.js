@@ -1,61 +1,68 @@
 import { VantComponent } from '../common/component';
-import { useChildren } from '../common/relation';
-import { addUnit, getRect, getSystemInfoSync } from '../common/utils';
+import { addUnit } from '../common/utils';
 let ARRAY = [];
 VantComponent({
     field: true,
-    relation: useChildren('dropdown-item', function () {
-        this.updateItemListData();
-    }),
+    relation: {
+        name: 'dropdown-item',
+        type: 'descendant',
+        current: 'dropdown-menu',
+        linked() {
+            this.updateItemListData();
+        },
+        unlinked() {
+            this.updateItemListData();
+        }
+    },
     props: {
         activeColor: {
             type: String,
-            observer: 'updateChildrenData',
+            observer: 'updateChildrenData'
         },
         overlay: {
             type: Boolean,
             value: true,
-            observer: 'updateChildrenData',
+            observer: 'updateChildrenData'
         },
         zIndex: {
             type: Number,
-            value: 10,
+            value: 10
         },
         duration: {
             type: Number,
             value: 200,
-            observer: 'updateChildrenData',
+            observer: 'updateChildrenData'
         },
         direction: {
             type: String,
             value: 'down',
-            observer: 'updateChildrenData',
+            observer: 'updateChildrenData'
         },
         closeOnClickOverlay: {
             type: Boolean,
             value: true,
-            observer: 'updateChildrenData',
+            observer: 'updateChildrenData'
         },
         closeOnClickOutside: {
             type: Boolean,
-            value: true,
-        },
+            value: true
+        }
     },
     data: {
-        itemListData: [],
+        itemListData: []
     },
     beforeCreate() {
-        const { windowHeight } = getSystemInfoSync();
+        const { windowHeight } = wx.getSystemInfoSync();
         this.windowHeight = windowHeight;
         ARRAY.push(this);
     },
     destroyed() {
-        ARRAY = ARRAY.filter((item) => item !== this);
+        ARRAY = ARRAY.filter(item => item !== this);
     },
     methods: {
         updateItemListData() {
             this.setData({
-                itemListData: this.children.map((child) => child.data),
+                itemListData: this.children.map((child) => child.data)
             });
         },
         updateChildrenData() {
@@ -81,7 +88,7 @@ VantComponent({
         },
         getChildWrapperStyle() {
             const { zIndex, direction } = this.data;
-            return getRect(this, '.van-dropdown-menu').then((rect) => {
+            return this.getRect('.van-dropdown-menu').then((rect) => {
                 const { top = 0, bottom = 0 } = rect;
                 const offset = direction === 'down' ? bottom : this.windowHeight - top;
                 let wrapperStyle = `z-index: ${zIndex};`;
@@ -98,7 +105,7 @@ VantComponent({
             const { index } = event.currentTarget.dataset;
             const child = this.children[index];
             if (!child.data.disabled) {
-                ARRAY.forEach((menuItem) => {
+                ARRAY.forEach(menuItem => {
                     if (menuItem &&
                         menuItem.data.closeOnClickOutside &&
                         menuItem !== this) {
@@ -107,6 +114,6 @@ VantComponent({
                 });
                 this.toggleItem(index);
             }
-        },
-    },
+        }
+    }
 });

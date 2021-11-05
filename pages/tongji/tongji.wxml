@@ -1,2 +1,109 @@
-<!--pages/tongji/tongji.wxml-->
-<text>pages/tongji/tongji.wxml</text>
+<view class="container">
+    <view class="header">
+        <image src="/assets/img/bg-img3.png " mode="widthFix" lazy-load="false" />
+        <view class="top">
+            <text class="all">统计</text>
+            <text class="updata">数据更新至</text>
+            <text class="time">{{lastUpdateTime}}</text>
+        </view>
+    </view>
+    <scroll-view class="content" scroll-y="{{true}}">
+        <view class="statistics">
+            <text class="title1">实时疫情动态</text>
+            <view class="grid" column-num="3" border="{{ true }}">
+                <view class="gridItem">
+                    <image src="/assets/icons/bingdu.png" mode="widthFix" />
+                    <text class="number" style="color:#FF6A57">{{nowqz}}</text>
+                    <text class="type">现有确诊</text>
+                    <view class="jia" style="display:inline-block;">
+                        昨日
+                        <view style="color:#FF6A57;display:inline-block;">+{{newqz}}</view>
+                    </view>
+                </view>
+                <view class="gridItem">
+                    <image src="/assets/icons/zhiyu.png" mode="widthFix" />
+                    <text class="number" style="color:rgb(62,174,181)">{{nowzy}}</text>
+                    <text class="type" style="display:inline-block;">累计治愈</text>
+                    <view class="jia">
+                        昨日
+                        <view style="color:rgb(62,174,181);display:inline-block;">+{{newzy}}</view>
+                    </view>
+                </view>
+                <view class="gridItem">
+                    <image src="/assets/icons/siwang.png" mode="widthFix" />
+                    <text class="number" style="color:black">{{nowsw}}</text>
+                    <text class="type">累计死亡</text>
+                    <view class="jia" style="display:inline-block;">
+                        昨日
+                        <view style="color:black;display:inline-block;" >+{{newsw}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <view class="map">
+            <view class="title1">疫情分布</view>
+            <view class="ditu" hover-class="none" hover-stop-propagation="false">
+                <ec-canvas id="mychart-dom-map" canvas-id="mychart-map" ec="{{ ecMap }}"></ec-canvas>
+            </view>
+        </view>
+
+        <view class="table">
+            <van-tabs class="tab" type="card"  color="white" inactive-color="green" title-active-color="black" title-inactive-color="#1573F6">
+            <van-tab title="国内疫情">
+                <view class="tabs1">
+                    <view class="tabs1head">
+                        <view class="adress">地区</view>
+                        <view class="nowqz">现存确诊</view>
+                        <view class="allqz">累积确诊</view>
+                        <view class="zhiliao">治愈</view>
+                        <view class="death">死亡</view>
+                    </view>
+                    <navigator  class="chinainfos" wx:for="{{chinainfo}}" wx:for-item="item"  wx:key="key">
+                    <view bindtap="xiangqing" data-item="{{item.name}}" class="infos">{{item.name}}</view>
+                    <view class="infos"style="color:rgb(255,69,0)"  >{{item.total.nowConfirm}}</view>
+                    <view class="infos"style="color:rgb(255,160,0)" >{{item.total.confirm}}</view>
+                    <view class="infos"style="color:rgb(62,174,181)" >{{item.total.heal}}</view>
+                    <view class="infos  right " style="color:black">{{item.total.dead}}</view>
+                    </navigator >
+                    <view class="findmore" bindtap="findmores">
+                    {{texts}}
+                </view>
+                </view>
+                
+            </van-tab>
+            <van-tab title="海外疫情">
+                    <view class="tabs1">
+                    <view class="tabs1head">
+                        <view class="adress">地区</view>
+                        <view class="nowqz">现存确诊</view>
+                        <view class="allqz">累积确诊</view>
+                        <view class="zhiliao">治愈</view>
+                        <view class="death">死亡</view>
+                    </view>
+                    <view class="waiguoinfos" wx:for="{{guowaiinfos}}" wx:for-item="item" wx:key="key">
+                    <view class="infos">{{item.provinceName}}</view>
+                    <view class="infos"style="color:rgb(255,69,0)" >{{item.currentConfirmedCount}}</view>
+                    <view class="infos"style="color:rgb(255,160,0)" >{{item.confirmedCount}}</view>
+                    <view class="infos"style="color:rgb(62,174,181)" >{{item.curedCount}}</view>
+                    <view class="infos right"style="color:black">{{item.deadCount}}</view>
+                </view >
+                  <view class="fanye" >
+                        <view class="btn" >
+                            <button bindtap="shangyiye">上一页</button>
+                        </view>
+                        <view  class="btn">
+                            <button bindtap="xiayiye">下一页</button>
+                        </view>                        
+                    </view>
+               
+                    </view>
+                   
+                    
+
+            </van-tab>
+            
+        </van-tabs>
+        </view>
+    </scroll-view>
+</view>

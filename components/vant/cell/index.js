@@ -6,7 +6,7 @@ VantComponent({
         'label-class',
         'value-class',
         'right-icon-class',
-        'hover-class',
+        'hover-class'
     ],
     mixins: [link],
     props: {
@@ -25,14 +25,13 @@ VantComponent({
         useLabelSlot: Boolean,
         border: {
             type: Boolean,
-            value: true,
-        },
-        titleStyle: String,
+            value: true
+        }
     },
     methods: {
         onClick(event) {
             this.$emit('click', event.detail);
             this.jumpLink();
-        },
-    },
+        }
+    }
 });

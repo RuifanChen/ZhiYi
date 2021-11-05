@@ -1,23 +1,40 @@
 import { VantComponent } from '../common/component';
-import { useChildren } from '../common/relation';
 VantComponent({
-    relation: useChildren('col', function (target) {
-        const { gutter } = this.data;
-        if (gutter) {
-            target.setData({ gutter });
+    relation: {
+        name: 'col',
+        type: 'descendant',
+        current: 'row',
+        linked(target) {
+            if (this.data.gutter) {
+                target.setGutter(this.data.gutter);
+            }
         }
-    }),
+    },
     props: {
         gutter: {
             type: Number,
-            observer: 'setGutter',
-        },
+            observer: 'setGutter'
+        }
+    },
+    data: {
+        viewStyle: '',
+    },
+    mounted() {
+        if (this.data.gutter) {
+            this.setGutter();
+        }
     },
     methods: {
         setGutter() {
-            this.children.forEach((col) => {
-                col.setData(this.data);
+            const { gutter } = this.data;
+            const margin = `-${Number(gutter) / 2}px`;
+            const viewStyle = gutter
+                ? `margin-right: ${margin}; margin-left: ${margin};`
+                : '';
+            this.setData({ viewStyle });
+            this.getRelationNodes('../col/index').forEach(col => {
+                col.setGutter(this.data.gutter);
             });
-        },
-    },
+        }
+    }
 });

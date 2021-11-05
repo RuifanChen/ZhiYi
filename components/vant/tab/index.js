@@ -1,35 +1,38 @@
-import { useParent } from '../common/relation';
 import { VantComponent } from '../common/component';
 VantComponent({
-    relation: useParent('tabs'),
+    relation: {
+        name: 'tabs',
+        type: 'ancestor',
+        current: 'tab',
+    },
     props: {
         dot: {
             type: Boolean,
-            observer: 'update',
+            observer: 'update'
         },
         info: {
             type: null,
-            observer: 'update',
+            observer: 'update'
         },
         title: {
             type: String,
-            observer: 'update',
+            observer: 'update'
         },
         disabled: {
             type: Boolean,
-            observer: 'update',
+            observer: 'update'
         },
         titleStyle: {
             type: String,
-            observer: 'update',
+            observer: 'update'
         },
         name: {
-            type: null,
+            type: [Number, String],
             value: '',
-        },
+        }
     },
     data: {
-        active: false,
+        active: false
     },
     methods: {
         getComputedName() {
@@ -44,13 +47,13 @@ VantComponent({
             this.setData({
                 active,
                 shouldRender: this.inited || !parentData.lazyRender,
-                shouldShow: active || parentData.animated,
+                shouldShow: active || parentData.animated
             });
         },
         update() {
             if (this.parent) {
                 this.parent.updateTabs();
             }
-        },
-    },
+        }
+    }
 });

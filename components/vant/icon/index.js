@@ -8,13 +8,20 @@ VantComponent({
         customStyle: String,
         classPrefix: {
             type: String,
-            value: 'van-icon',
+            value: 'van-icon'
         },
-        name: String,
+        name: {
+            type: String,
+            observer(val) {
+                this.setData({
+                    isImageName: val.indexOf('/') !== -1
+                });
+            }
+        }
     },
     methods: {
         onClick() {
             this.$emit('click');
-        },
-    },
+        }
+    }
 });

@@ -1,9 +1,12 @@
 import { VantComponent } from '../common/component';
-import { useParent } from '../common/relation';
-import { setContentAnimate } from './animate';
+const nextTick = () => new Promise(resolve => setTimeout(resolve, 20));
 VantComponent({
     classes: ['title-class', 'content-class'],
-    relation: useParent('collapse'),
+    relation: {
+        name: 'collapse',
+        type: 'ancestor',
+        current: 'collapse-item',
+    },
     props: {
         name: null,
         title: null,
@@ -14,24 +17,33 @@ VantComponent({
         clickable: Boolean,
         border: {
             type: Boolean,
-            value: true,
+            value: true
         },
         isLink: {
             type: Boolean,
-            value: true,
-        },
+            value: true
+        }
     },
     data: {
+        contentHeight: 0,
         expanded: false,
+        transition: false
     },
     mounted() {
-        this.updateExpanded();
-        this.mounted = true;
+        this.updateExpanded()
+            .then(nextTick)
+            .then(() => {
+            const data = { transition: true };
+            if (this.data.expanded) {
+                data.contentHeight = 'auto';
+            }
+            this.setData(data);
+        });
     },
     methods: {
         updateExpanded() {
             if (!this.parent) {
-                return;
+                return Promise.resolve();
             }
             const { value, accordion } = this.parent.data;
             const { children = [] } = this.parent;
@@ -41,10 +53,26 @@ VantComponent({
             const expanded = accordion
                 ? value === currentName
                 : (value || []).some((name) => name === currentName);
+            const stack = [];
             if (expanded !== this.data.expanded) {
-                setContentAnimate(this, expanded, this.mounted);
+                stack.push(this.updateStyle(expanded));
             }
-            this.setData({ index, expanded });
+            stack.push(this.set({ index, expanded }));
+            return Promise.all(stack);
+        },
+        updateStyle(expanded) {
+            return this.getRect('.van-collapse-item__content')
+                .then((rect) => rect.height)
+                .then((height) => {
+                if (expanded) {
+                    return this.set({
+                        contentHeight: height ? `${height}px` : 'auto'
+                    });
+                }
+                return this.set({ contentHeight: `${height}px` })
+                    .then(nextTick)
+                    .then(() => this.set({ contentHeight: 0 }));
+            });
         },
         onClick() {
             if (this.data.disabled) {
@@ -55,5 +83,12 @@ VantComponent({
             const currentName = name == null ? index : name;
             this.parent.switch(currentName, !expanded);
         },
-    },
+        onTransitionEnd() {
+            if (this.data.expanded) {
+                this.setData({
+                    contentHeight: 'auto'
+                });
+            }
+        }
+    }
 });

@@ -1,0 +1,19 @@
+
+
+
+ <view class="tabs1">
+                    <view class="tabs1head">
+                        <view class="adress">地区</view>
+                        <view class="nowqz">现存确诊</view>
+                        <view class="allqz">累积确诊</view>
+                        <view class="zhiliao">治愈</view>
+                        <view class="death">死亡</view>
+                    </view>
+                    <view  wx:for="{{xiangqing}}" wx:for-item="item"  class="chinainfos" wx:key="key">
+                    <view class="infos">{{item.name}}</view>
+                    <view class="infos"style="color:rgb(255,69,0)" >{{item.total.nowConfirm}}</view>
+                    <view class="infos"style="color:rgb(255,160,0)" >{{item.total.confirm}}</view>
+                    <view class="infos"style="color:rgb(62,174,181)" >{{item.total.heal}}</view>
+                    <view class="infos right "style="color:black">{{item.total.dead}}</view>
+                </view >
+                </view>

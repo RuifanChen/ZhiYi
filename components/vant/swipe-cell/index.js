@@ -13,7 +13,7 @@ VantComponent({
                 if (this.offset > 0) {
                     this.swipeMove(leftWidth);
                 }
-            },
+            }
         },
         rightWidth: {
             type: Number,
@@ -22,25 +22,24 @@ VantComponent({
                 if (this.offset < 0) {
                     this.swipeMove(-rightWidth);
                 }
-            },
+            }
         },
         asyncClose: Boolean,
         name: {
-            type: null,
-            value: '',
-        },
+            type: [Number, String],
+            value: ''
+        }
     },
     mixins: [touch],
     data: {
-        catchMove: false,
-        wrapperStyle: '',
+        catchMove: false
     },
     created() {
         this.offset = 0;
         ARRAY.push(this);
     },
     destroyed() {
-        ARRAY = ARRAY.filter((item) => item !== this);
+        ARRAY = ARRAY.filter(item => item !== this);
     },
     methods: {
         open(position) {
@@ -49,7 +48,7 @@ VantComponent({
             this.swipeMove(offset);
             this.$emit('open', {
                 position,
-                name: this.data.name,
+                name: this.data.name
             });
         },
         close() {
@@ -67,7 +66,7 @@ VantComponent({
         -webkit-transition: ${transition};
         transform: ${transform};
         transition: ${transition};
-      `,
+      `
             });
         },
         swipeLeaveTransition() {
@@ -101,7 +100,7 @@ VantComponent({
                 return;
             }
             this.dragging = true;
-            ARRAY.filter((item) => item !== this && item.offset !== 0).forEach((item) => item.close());
+            ARRAY.filter(item => item !== this).forEach(item => item.close());
             this.setData({ catchMove: true });
             this.swipeMove(this.startOffset + this.deltaX);
         },
@@ -122,12 +121,12 @@ VantComponent({
                 this.$emit('close', {
                     position,
                     instance: this,
-                    name: this.data.name,
+                    name: this.data.name
                 });
             }
             else {
                 this.swipeMove(0);
             }
-        },
-    },
+        }
+    }
 });
